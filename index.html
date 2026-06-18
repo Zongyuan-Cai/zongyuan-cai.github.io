@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zongyuan Cai</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #2c2c2c;
+            --muted: #6b6b6b;
+            --accent: #3b82f6;
+            --border: #e5e5e5;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Header ── */
+        header {
+            padding: 100px 0 48px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        header .tagline {
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        /* ── Sections ── */
+        section {
+            margin-bottom: 48px;
+        }
+
+        section h2 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        section p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        /* ── Research list ── */
+        .research-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .research-list li {
+            padding: 14px 18px;
+            margin-bottom: 8px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .research-list li:hover {
+            border-color: var(--accent);
+        }
+
+        .research-list li strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .research-list li .desc {
+            display: block;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* ── Education card ── */
+        .edu-card {
+            padding: 18px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .edu-card .school {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .edu-card .dept {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* ── Contact ── */
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 48px 0 64px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* ── Divider ── */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0 0 48px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            header {
+                padding: 64px 0 36px;
+            }
+
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            section {
+                margin-bottom: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Zongyuan Cai</h1>
+            <p class="tagline">
+                Exploring the frontiers of LLMs &amp; AI Agents<br>
+                <span style="font-size:0.9rem;">大语言模型与智能体探索者</span>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- About Me -->
+        <section>
+            <h2>About Me · 关于我</h2>
+            <p>
+                I am a researcher driven by curiosity about how machines understand and reason.
+                My work revolves around building intelligent systems that can think, plan, and act —
+                pushing the boundary of what language models can do.
+            </p>
+            <p style="color:var(--muted);">
+                我是一名对机器理解与推理充满好奇的研究者。我的工作围绕构建能够思考、规划和行动的智能系统展开，不断探索语言模型的能力边界。
+            </p>
+        </section>
+
+        <!-- Research Interests -->
+        <section>
+            <h2>Research Interests · 研究兴趣</h2>
+            <ul class="research-list">
+                <li>
+                    <strong>Large Language Models</strong>
+                    <span class="desc">Pre-training, alignment, and efficient inference · 预训练、对齐与高效推理</span>
+                </li>
+                <li>
+                    <strong>LLM Agents</strong>
+                    <span class="desc">Tool use, planning, reasoning, and multi-agent collaboration · 工具使用、规划、推理与多智能体协作</span>
+                </li>
+                <li>
+                    <strong>NLP &amp; Understanding</strong>
+                    <span class="desc">Natural language understanding, generation, and evaluation · 自然语言理解、生成与评估</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education · 教育背景</h2>
+            <div class="edu-card">
+                <div class="school">Southeast University · 东南大学</div>
+                <div class="dept">School of Computer Science and Engineering · 计算机科学与工程学院</div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <h2>Contact · 联系方式</h2>
+            <p>
+                Email: <a href="mailto:213252535@seu.edu.cn">213252535@seu.edu.cn</a>
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            Stay curious. Build things. · 保持好奇，动手创造。
+        </footer>
+
+    </div>
+
+</body>
+</html>
