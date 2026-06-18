@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,12 @@
             --text: #1a1a1a;
             --muted: #666666;
             --accent: #2563eb;
-            --light-bg: #f8f9fa;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.8;
@@ -64,7 +63,7 @@
             font-size: 1.05rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-bottom: 4px;
             border-bottom: 1.5px solid #e8e8e8;
         }
@@ -75,15 +74,7 @@
             color: #333;
         }
 
-        section p.zh {
-            color: var(--muted);
-        }
-
         /* ── Research ── */
-        .research-focus {
-            margin-top: 8px;
-        }
-
         .research-focus .primary {
             font-weight: 600;
             color: var(--text);
@@ -102,17 +93,33 @@
             font-size: 0.93rem;
         }
 
+        /* ── Projects ── */
+        .project-item {
+            margin-bottom: 14px;
+        }
+
+        .project-item .name {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .project-item .name a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .project-item .name a:hover {
+            text-decoration: underline;
+        }
+
+        .project-item .desc {
+            display: block;
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin-top: 1px;
+        }
+
         /* ── Papers ── */
-        .paper-list {
-            list-style: none;
-        }
-
-        .paper-list li {
-            margin-bottom: 10px;
-            font-size: 0.93rem;
-            padding-left: 0;
-        }
-
         .paper-placeholder {
             color: var(--muted);
             font-style: italic;
@@ -132,23 +139,6 @@
         .edu-line .dept {
             color: var(--muted);
             font-size: 0.9rem;
-        }
-
-        /* ── Contact ── */
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            font-size: 0.93rem;
-        }
-
-        .contact-links a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .contact-links a:hover {
-            text-decoration: underline;
         }
 
         /* ── Footer ── */
@@ -174,59 +164,81 @@
         <header>
             <h1>Zongyuan Cai</h1>
             <p class="affiliation">
-                Southeast University · 东南大学
+                Southeast University
                 &nbsp;|&nbsp;
                 <a href="mailto:213252535@seu.edu.cn">213252535@seu.edu.cn</a>
             </p>
         </header>
 
-        <!-- About Me -->
+        <!-- About -->
         <section>
-            <h2>About · 关于我</h2>
+            <h2>About</h2>
             <p>
                 I am a researcher interested in building intelligent agents powered by large language models.
                 My work focuses on enabling LLM-based agents to reason, plan, use tools, and collaborate
                 effectively in complex environments.
             </p>
-            <p class="zh">
-                我是一名研究者，致力于构建由大语言模型驱动的智能体。我的工作围绕让 LLM Agent
-                能够在复杂环境中有效推理、规划、使用工具和协作展开。
-            </p>
         </section>
 
-        <!-- Research Interests -->
+        <!-- Research -->
         <section>
-            <h2>Research · 研究方向</h2>
+            <h2>Research</h2>
             <div class="research-focus">
                 <p class="primary">
                     LLM Agents
                     <span class="detail">
-                        Tool use · Planning · Reasoning · Multi-agent collaboration · 工具使用 · 规划 · 推理 · 多智能体协作
+                        Tool use · Planning · Reasoning · Multi-agent collaboration
                     </span>
                 </p>
                 <p class="secondary">
                     I also work on Large Language Models more broadly.
-                    <span style="font-size:0.85rem;">同时关注大语言模型的基础问题。</span>
                 </p>
             </div>
         </section>
 
         <!-- Papers -->
         <section>
-            <h2>Papers · 论文</h2>
-            <p class="paper-placeholder">
-                Coming soon. Stay tuned!
-                <span style="font-size:0.85rem;"> 论文即将上线，敬请关注。</span>
-            </p>
+            <h2>Papers</h2>
+            <p class="paper-placeholder">Coming soon. Stay tuned!</p>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects I Follow</h2>
+
+            <div class="project-item">
+                <span class="name"><a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></span>
+                <span class="desc">Stateful multi-agent orchestration framework with ReAct agents, agentic RAG, and human-in-the-loop.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="name"><a href="https://github.com/microsoft/autogen" target="_blank">AutoGen</a></span>
+                <span class="desc">Microsoft's multi-agent conversation framework with MCP integration and distributed agent networks.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="name"><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">OpenHands</a></span>
+                <span class="desc">Autonomous AI software engineer running in isolated Docker sandboxes. 68%+ on SWE-bench Verified.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="name"><a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></span>
+                <span class="desc">Role-based multi-agent team orchestration with hierarchical and sequential process patterns.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="name"><a href="https://github.com/Aider-AI/aider" target="_blank">Aider</a></span>
+                <span class="desc">Git-native AI pair programming agent with auto-commits, multi-file edits, and 75+ model providers.</span>
+            </div>
         </section>
 
         <!-- Education -->
         <section>
-            <h2>Education · 教育背景</h2>
+            <h2>Education</h2>
             <p class="edu-line">
-                <span class="school">Southeast University</span> · 东南大学
+                <span class="school">Southeast University</span>
                 <br>
-                <span class="dept">School of Computer Science and Engineering · 计算机科学与工程学院</span>
+                <span class="dept">School of Computer Science and Engineering</span>
             </p>
         </section>
 
