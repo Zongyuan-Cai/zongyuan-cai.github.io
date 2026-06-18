@@ -28,7 +28,6 @@
             padding: 0 24px;
         }
 
-        /* ── Header ── */
         header {
             padding: 80px 0 36px;
         }
@@ -54,7 +53,6 @@
             text-decoration: underline;
         }
 
-        /* ── Sections ── */
         section {
             margin-bottom: 36px;
         }
@@ -75,22 +73,49 @@
         }
 
         /* ── Research ── */
-        .research-focus .primary {
-            font-weight: 600;
+        .research-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .research-list li {
+            margin-bottom: 10px;
+            font-size: 0.93rem;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .research-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+            top: 2px;
+        }
+
+        .research-list li strong {
             color: var(--text);
         }
 
-        .research-focus .detail {
+        .research-list li .sub {
             display: block;
             color: var(--muted);
-            font-size: 0.9rem;
-            margin-top: 2px;
+            font-size: 0.86rem;
+            margin-top: 1px;
         }
 
-        .research-focus .secondary {
-            margin-top: 10px;
+        .research-note {
+            margin-top: 12px;
             color: var(--muted);
             font-size: 0.93rem;
+        }
+
+        /* ── Papers ── */
+        .paper-placeholder {
+            color: var(--muted);
+            font-style: italic;
+            font-size: 0.9rem;
         }
 
         /* ── Projects ── */
@@ -119,14 +144,6 @@
             margin-top: 1px;
         }
 
-        /* ── Papers ── */
-        .paper-placeholder {
-            color: var(--muted);
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-
-        /* ── Education ── */
         .edu-line {
             font-size: 0.95rem;
             color: #333;
@@ -141,14 +158,12 @@
             font-size: 0.9rem;
         }
 
-        /* ── Footer ── */
         footer {
             padding: 40px 0 48px;
             color: #999;
             font-size: 0.8rem;
         }
 
-        /* ── Responsive ── */
         @media (max-width: 600px) {
             header { padding: 48px 0 28px; }
             header h1 { font-size: 1.5rem; }
@@ -160,7 +175,6 @@
 
     <div class="container">
 
-        <!-- Header -->
         <header>
             <h1>Zongyuan Cai</h1>
             <p class="affiliation">
@@ -183,17 +197,37 @@
         <!-- Research -->
         <section>
             <h2>Research</h2>
-            <div class="research-focus">
-                <p class="primary">
-                    LLM Agents
-                    <span class="detail">
-                        Tool use · Planning · Reasoning · Multi-agent collaboration
+            <ul class="research-list">
+                <li>
+                    <strong>LLM Agents</strong> — my primary research focus
+                    <span class="sub">
+                        I study how to build autonomous agents that can decompose complex tasks, reason over
+                        multi-step plans, invoke external tools, and recover from errors. My interest spans
+                        single-agent architectures (ReAct, Plan-and-Execute, Reflexion) as well as multi-agent
+                        systems where agents collaborate, negotiate, and share knowledge. I am also interested
+                        in agent evaluation — how do we reliably measure an agent's ability to complete
+                        open-ended, long-horizon tasks?
                     </span>
-                </p>
-                <p class="secondary">
-                    I also work on Large Language Models more broadly.
-                </p>
-            </div>
+                </li>
+                <li>
+                    <strong>Tool Use & Grounding</strong>
+                    <span class="sub">
+                        Enabling agents to interact with APIs, code interpreters, databases, and the web.
+                        I explore how agents learn to select, compose, and sequence tools, and how they ground
+                        abstract instructions in executable actions.
+                    </span>
+                </li>
+                <li>
+                    <strong>Reasoning & Planning</strong>
+                    <span class="sub">
+                        Improving the chain-of-thought and tree-of-thought capabilities of LLMs so agents can
+                        navigate large search spaces, backtrack from dead ends, and produce verifiable plans.
+                    </span>
+                </li>
+            </ul>
+            <p class="research-note">
+                I also work on Large Language Models more broadly.
+            </p>
         </section>
 
         <!-- Papers -->
@@ -204,31 +238,24 @@
 
         <!-- Projects -->
         <section>
-            <h2>Projects I Follow</h2>
+            <h2>Projects</h2>
 
             <div class="project-item">
-                <span class="name"><a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></span>
-                <span class="desc">Stateful multi-agent orchestration framework with ReAct agents, agentic RAG, and human-in-the-loop.</span>
+                <span class="name"><a href="https://github.com/HyperCluster-Tech/manimator" target="_blank">Manimator</a></span>
+                <span class="desc">
+                    AI-powered tool that transforms research papers (arXiv PDF) into Manim animations.
+                    Three-stage pipeline — scene planning → Manim code generation → MP4 rendering —
+                    with automatic error-correction loops.
+                </span>
             </div>
 
             <div class="project-item">
-                <span class="name"><a href="https://github.com/microsoft/autogen" target="_blank">AutoGen</a></span>
-                <span class="desc">Microsoft's multi-agent conversation framework with MCP integration and distributed agent networks.</span>
-            </div>
-
-            <div class="project-item">
-                <span class="name"><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">OpenHands</a></span>
-                <span class="desc">Autonomous AI software engineer running in isolated Docker sandboxes. 68%+ on SWE-bench Verified.</span>
-            </div>
-
-            <div class="project-item">
-                <span class="name"><a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></span>
-                <span class="desc">Role-based multi-agent team orchestration with hierarchical and sequential process patterns.</span>
-            </div>
-
-            <div class="project-item">
-                <span class="name"><a href="https://github.com/Aider-AI/aider" target="_blank">Aider</a></span>
-                <span class="desc">Git-native AI pair programming agent with auto-commits, multi-file edits, and 75+ model providers.</span>
+                <span class="name"><a href="https://github.com/mozilla-ai/agent.cpp" target="_blank">agent.cpp</a></span>
+                <span class="desc">
+                    Mozilla's production-grade C++17 agent framework built on llama.cpp for fully local
+                    inference. Features agent loops, callbacks, multi-agent weight sharing, tool use,
+                    MCP support, and OpenTelemetry tracing — no cloud required.
+                </span>
             </div>
         </section>
 
@@ -242,7 +269,6 @@
             </p>
         </section>
 
-        <!-- Footer -->
         <footer>
             &copy; 2026 Zongyuan Cai &nbsp;·&nbsp; Stay curious. Build things.
         </footer>
