@@ -1,0 +1,21 @@
+title: "Zongyuan Cai 的博客"
+description: "一些想法、学习笔记与日常记录。"
+url: "https://zongyuan-cai.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+excerpt_separator: "<!--more-->"
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: blog-post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

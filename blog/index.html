@@ -1,0 +1,25 @@
+---
+layout: blog
+title: 博客
+permalink: /blog/
+---
+<header class="blog-heading">
+  <h1>博客</h1>
+  <p>{{ site.description | escape }}</p>
+</header>
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+    <div>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+      {% assign summary = post.description | default: post.excerpt | strip_html | normalize_whitespace %}
+      {% if summary != '' %}<p>{{ summary | truncate: 140 | escape }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty-state">还没有文章，慢慢写。</p>
+{% endif %}
