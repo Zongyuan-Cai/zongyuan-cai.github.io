@@ -25,7 +25,7 @@ I explore how language model agents can reason, use tools, and learn from experi
 
 Wenjia Jiang, **Zongyuan Cai**, Yuanhang Shao, Chenru Wang, Boyan Han, Zhixue Song, Keyu Chen, Shengwei An, Xu Yang, Zhou Yang
 
-*arXiv preprint, 2026 · arXiv:2606.30296*
+**EMNLP 2026 · Poster** · [arXiv:2606.30296](https://arxiv.org/abs/2606.30296)
 
 An agent that turns scientific content into Manim animations and retains useful examples and failure lessons in a dual-channel memory bank. Experience carries across tasks without updating model weights.
 

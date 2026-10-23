@@ -13,56 +13,62 @@
   <style>
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:24px; }
-    body { margin:0; background:#fff; color:#222; font:14px/1.75 Arial,Helvetica,"Microsoft YaHei",sans-serif; }
+    body { margin:0; background:#fff; color:#222; font:14px/1.9 Arial,Helvetica,"Microsoft YaHei",sans-serif; }
     [hidden] { display:none !important; }
     a { color:#1772d0; text-decoration:none; }
     a:hover { color:#c36a10; text-decoration:underline; }
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid #1772d0; outline-offset:4px; }
     button { font:inherit; }
-    .container { max-width:860px; margin:0 auto; padding:0 24px; }
+    .container { max-width:940px; margin:0 auto; padding:0 24px; }
     .skip { position:absolute; top:-80px; left:20px; padding:8px 12px; background:#fff; }
     .skip:focus { top:8px; }
     .site-header { border-bottom:1px solid #eee; }
-    .header-inner { min-height:64px; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .header-inner { min-height:72px; display:flex; justify-content:space-between; align-items:center; gap:20px; }
     .site-name { color:#333; font-size:16px; font-weight:600; }
     .header-controls,nav { display:flex; align-items:center; gap:22px; }
     nav { flex-wrap:wrap; row-gap:8px; }
     nav a { color:#555; font-size:13px; }
     .language { border:0; background:none; padding:0; color:#666; font-size:12px; cursor:pointer; white-space:nowrap; }
     .language:hover { color:#1772d0; }
-    main { padding-top:35px; }
-    h1 { font-size:32px; line-height:1.3; font-weight:400; margin:0 0 20px; }
-    p { margin:0 0 13px; }
+    main { padding-top:48px; }
+    h1 { font-size:32px; line-height:1.3; font-weight:400; margin:0 0 28px; }
+    p { margin:0 0 18px; }
     .intro { max-width:780px; }
-    .profile-links { margin-top:18px; }
+    .profile-links { margin-top:24px; }
     .sep { color:#999; margin:0 9px; }
-    section { margin-top:30px; }
+    section { margin-top:46px; }
     .intro { margin-top:0; }
-    h2 { margin:0 0 14px; padding-bottom:7px; border-bottom:1px solid #eee; font-size:22px; line-height:1.4; font-weight:400; }
+    h2 { margin:0 0 22px; padding-bottom:10px; border-bottom:1px solid #eee; font-size:22px; line-height:1.4; font-weight:400; }
     ul { padding-left:20px; margin:0; }
-    li { margin:6px 0; }
+    li { margin:10px 0; }
     .news-date { display:inline-block; min-width:80px; color:#555; }
-    .publication { margin-top:18px; }
-    .paper-title { font-size:15px; line-height:1.6; font-weight:600; margin:0 0 4px; }
-    .authors { margin-bottom:4px; color:#555; }
+    .publication { display:grid; grid-template-columns:250px minmax(0,1fr); gap:30px; align-items:start; margin-top:26px; }
+    .paper-figure { margin:0; padding-top:6px; }
+    .paper-figure a { display:block; }
+    .paper-figure img { display:block; width:100%; height:auto; }
+    .paper-figure figcaption { margin-top:9px; color:#777; font-size:12px; text-align:center; }
+    .publication-body { min-width:0; }
+    .paper-title { font-size:15px; line-height:1.7; font-weight:600; margin:0 0 9px; }
+    .authors { margin-bottom:9px; color:#555; }
     .authors strong { color:#222; }
-    .venue { margin-bottom:6px; color:#666; font-style:italic; }
-    .paper-links { display:flex; flex-wrap:wrap; gap:0 12px; margin-bottom:10px; }
+    .venue { margin-bottom:10px; color:#a33227; font-weight:600; }
+    .paper-links { display:flex; flex-wrap:wrap; gap:4px 12px; margin-bottom:14px; }
     .paper-summary { margin:0; color:#444; }
-    details { margin-top:9px; }
+    details { margin-top:16px; }
     summary { cursor:pointer; width:fit-content; color:#1772d0; font-size:13px; }
     .citation-box { position:relative; padding:12px; background:#f7f7f7; margin-top:10px; border:1px solid #eee; }
     pre { margin:0; padding-top:29px; white-space:pre-wrap; overflow-wrap:anywhere; font:11px/1.7 Consolas,monospace; }
     .copy { position:absolute; right:10px; top:9px; border:1px solid #ccc; background:#fff; padding:2px 8px; cursor:pointer; font-size:11px; }
     .copy-status { color:#555; font-size:12px; display:block; margin-top:4px; }
     .projects { list-style:none; padding:0; }
-    .projects li { margin-bottom:14px; }
+    .projects li { margin-bottom:22px; }
     .project-title { font-weight:600; }
-    .project-description { margin:3px 0 0; color:#555; }
-    .education-name { font-weight:600; margin-bottom:2px; }
+    .project-description { margin:6px 0 0; color:#555; }
+    .education-name { font-weight:600; margin-bottom:6px; }
     .education-school { color:#555; }
-    footer { margin-top:35px; border-top:1px solid #eee; padding:17px 0 24px; color:#888; font-size:12px; }
-    @media(max-width:600px) { .container { padding:0 20px; } .header-inner { min-height:58px; padding-top:12px; padding-bottom:12px; } .site-name { display:none; } .header-controls { width:100%; justify-content:space-between; gap:12px; } nav { gap:17px; } nav a { font-size:12px; } .language { font-size:11px; } main { padding-top:28px; } h1 { font-size:29px; } section { margin-top:27px; } h2 { font-size:21px; } .paper-links { gap:0 10px; } }
+    footer { margin-top:48px; border-top:1px solid #eee; padding:22px 0 32px; color:#888; font-size:12px; }
+    @media(max-width:760px) { .publication { grid-template-columns:200px minmax(0,1fr); gap:24px; } }
+    @media(max-width:600px) { .container { padding:0 20px; } .header-inner { min-height:64px; padding-top:14px; padding-bottom:14px; } .site-name { display:none; } .header-controls { width:100%; justify-content:space-between; gap:12px; } nav { gap:17px; } nav a { font-size:12px; } .language { font-size:11px; } main { padding-top:36px; } h1 { font-size:29px; } section { margin-top:38px; } h2 { font-size:21px; margin-bottom:20px; } .publication { grid-template-columns:minmax(0,1fr); gap:24px; } .paper-figure { width:100%; max-width:360px; margin:0 auto; padding:0; } .paper-links { gap:4px 12px; } }
     @media(max-width:360px) { nav { gap:12px; } nav a { font-size:11px; } .sep { margin:0 6px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @media print { .site-header,.skip,.copy { display:none; } .container { max-width:none; padding:0; } main { padding-top:0; } body { font-size:11px; } section { break-inside:avoid; } a { color:#222; } }
@@ -89,14 +95,20 @@
       </section>
       <section id="news" aria-labelledby="news-heading">
         <h2 id="news-heading" data-i18n="news">News</h2>
-        <ul><li><span class="news-date">[2026-06]</span><span data-i18n="newsItem">Our work <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> is available on arXiv.</span></li></ul>
+        <ul><li><span class="news-date">[2026]</span><span data-i18n="newsItem">Our paper <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> has been accepted to <strong>EMNLP 2026 (Poster)</strong>.</span></li></ul>
       </section>
       <section id="publications" aria-labelledby="publications-heading">
         <h2 id="publications-heading" data-i18n="publications">Publications</h2>
         <article class="publication" aria-labelledby="paper-title">
+          <figure class="paper-figure">
+            <!-- Paper Figure 2. Original: https://manimagent.github.io/static/images/pipeline.png -->
+            <a href="/assets/images/manimagent-framework.png" target="_blank" rel="noopener noreferrer" aria-label="View the full-size ManimAgent framework figure"><img src="/assets/images/manimagent-framework.png" width="2284" height="1087" alt="ManimAgent framework: coder, renderer, and reviewer agents use a dual-channel episodic memory bank to learn across tasks." loading="lazy" decoding="async"></a>
+            <figcaption data-i18n="frameworkCaption">Framework overview</figcaption>
+          </figure>
+          <div class="publication-body">
           <h3 class="paper-title" id="paper-title"><a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent: Self-Evolving Multimodal Agents for Visual Education</a></h3>
           <p class="authors">Wenjia Jiang, <strong>Zongyuan Cai</strong>, Yuanhang Shao, Chenru Wang, Boyan Han, Zhixue Song, Keyu Chen, Shengwei An, Xu Yang, Zhou Yang</p>
-          <p class="venue" data-i18n="venue">arXiv preprint, 2026</p>
+          <p class="venue" data-i18n="venue">EMNLP 2026 · Poster</p>
           <div class="paper-links"><a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">[arXiv]</a><a href="https://arxiv.org/pdf/2606.30296" target="_blank" rel="noopener noreferrer">[PDF]</a><a href="https://manimagent.github.io/" target="_blank" rel="noopener noreferrer" data-i18n="projectPage">[Project page]</a><a href="https://github.com/jwj1342/Paper2Manim" target="_blank" rel="noopener noreferrer" data-i18n="code">[Code]</a></div>
           <p class="paper-summary" data-i18n="paperSummary">A multimodal agent that generates Manim animations from scientific content and learns across tasks through a dual-channel memory bank of successful examples and validated failure patterns, without updating model weights.</p>
           <details><summary>BibTeX</summary><div class="citation-box"><button class="copy" id="copy-citation" type="button" data-i18n="copy" hidden>Copy</button><pre><code id="bibtex">@misc{jiang2026manimagentselfevolvingmultimodalagents,
@@ -108,6 +120,7 @@
   primaryClass = {cs.AI},
   url = {https://arxiv.org/abs/2606.30296}
 }</code></pre></div><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></details>
+          </div>
         </article>
       </section>
       <section id="interests" aria-labelledby="interests-heading">
@@ -131,10 +144,10 @@
     (() => {
       const translations = {
         en: {
-          skip:'Skip to content',about:'About',publications:'Publications',projects:'Projects',blog:'Blog',contact:'Contact',intro:'I am at <strong>Southeast University</strong>, in the School of Computer Science and Engineering. My research interests lie in <strong>large language models, intelligent agents, and multimodal learning</strong>.',researchIntro:'I am particularly interested in how LLM-based agents can reason, use tools, and learn from experience across tasks. My recent work explores agent memory and self-evolution for generating scientific animations.',email:'Email',latestPaper:'Latest paper',news:'News',newsItem:'Our work <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> is available on arXiv.',venue:'arXiv preprint, 2026',projectPage:'[Project page]',code:'[Code]',paperSummary:'A multimodal agent that generates Manim animations from scientific content and learns across tasks through a dual-channel memory bank of successful examples and validated failure patterns, without updating model weights.',copy:'Copy',copied:'BibTeX copied.',copyFallback:'Citation selected. Press Ctrl+C (or ⌘C) to copy.',interests:'Research Interests',agents:'<strong>LLM agents:</strong> reasoning, planning, and tool use.',memory:'<strong>Memory and self-evolution:</strong> learning from success and failure across tasks.',multimodal:'<strong>Multimodal learning:</strong> connecting language, code, and visual feedback.',paperProject:'A pipeline for converting research papers into explanatory Manim animations, with scene planning, code generation, and text and visual reflection. Contributor.',circuitProject:'Digital logic circuit design and simulation in C++.',stlProject:'A from-scratch implementation of core STL containers, iterators, and algorithms.',education:'Education',university:'Southeast University',school:'School of Computer Science and Engineering'
+          skip:'Skip to content',about:'About',publications:'Publications',projects:'Projects',blog:'Blog',contact:'Contact',intro:'I am at <strong>Southeast University</strong>, in the School of Computer Science and Engineering. My research interests lie in <strong>large language models, intelligent agents, and multimodal learning</strong>.',researchIntro:'I am particularly interested in how LLM-based agents can reason, use tools, and learn from experience across tasks. My recent work explores agent memory and self-evolution for generating scientific animations.',email:'Email',latestPaper:'Latest paper',news:'News',newsItem:'Our paper <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> has been accepted to <strong>EMNLP 2026 (Poster)</strong>.',venue:'EMNLP 2026 · Poster',frameworkCaption:'Framework overview',projectPage:'[Project page]',code:'[Code]',paperSummary:'A multimodal agent that generates Manim animations from scientific content and learns across tasks through a dual-channel memory bank of successful examples and validated failure patterns, without updating model weights.',copy:'Copy',copied:'BibTeX copied.',copyFallback:'Citation selected. Press Ctrl+C (or ⌘C) to copy.',interests:'Research Interests',agents:'<strong>LLM agents:</strong> reasoning, planning, and tool use.',memory:'<strong>Memory and self-evolution:</strong> learning from success and failure across tasks.',multimodal:'<strong>Multimodal learning:</strong> connecting language, code, and visual feedback.',paperProject:'A pipeline for converting research papers into explanatory Manim animations, with scene planning, code generation, and text and visual reflection. Contributor.',circuitProject:'Digital logic circuit design and simulation in C++.',stlProject:'A from-scratch implementation of core STL containers, iterators, and algorithms.',education:'Education',university:'Southeast University',school:'School of Computer Science and Engineering'
         },
         zh: {
-          skip:'跳转至正文',about:'关于',publications:'论文',projects:'项目',blog:'博客',contact:'联系',intro:'我在<strong>东南大学计算机科学与工程学院</strong>，研究兴趣包括<strong>大语言模型、智能体与多模态学习</strong>。',researchIntro:'我尤其关注语言模型智能体如何推理、使用工具，并在不同任务之间积累经验。近期的工作围绕智能体记忆与自进化展开，探索科学动画的自动生成。',email:'邮箱',latestPaper:'最新论文',news:'近期动态',newsItem:'我们的工作 <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> 已发布于 arXiv。',venue:'arXiv 预印本，2026',projectPage:'[项目主页]',code:'[代码]',paperSummary:'从科学内容生成 Manim 动画的多模态智能体，通过双通道记忆库保留成功案例和经过验证的失败模式，在不更新模型权重的情况下跨任务利用经验。',copy:'复制',copied:'已复制 BibTeX。',copyFallback:'引用已选中，请按 Ctrl+C（或 ⌘C）复制。',interests:'研究兴趣',agents:'<strong>语言模型智能体：</strong>推理、规划与工具使用。',memory:'<strong>记忆与自进化：</strong>跨任务积累成功与失败经验。',multimodal:'<strong>多模态学习：</strong>结合语言、代码与视觉反馈。',paperProject:'将学术论文转化为 Manim 讲解动画，通过场景规划、代码生成及文本和视觉反思改进结果。我参与了该项目的开发。',circuitProject:'基于 C++ 的数字逻辑电路设计与仿真。',stlProject:'从零实现核心 STL 容器、迭代器与算法。',education:'教育背景',university:'东南大学',school:'计算机科学与工程学院'
+          skip:'跳转至正文',about:'关于',publications:'论文',projects:'项目',blog:'博客',contact:'联系',intro:'我在<strong>东南大学计算机科学与工程学院</strong>，研究兴趣包括<strong>大语言模型、智能体与多模态学习</strong>。',researchIntro:'我尤其关注语言模型智能体如何推理、使用工具，并在不同任务之间积累经验。近期的工作围绕智能体记忆与自进化展开，探索科学动画的自动生成。',email:'邮箱',latestPaper:'最新论文',news:'近期动态',newsItem:'我们的论文 <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> 已被 <strong>EMNLP 2026 接收（Poster）</strong>。',venue:'EMNLP 2026 · Poster',frameworkCaption:'方法框架总览',projectPage:'[项目主页]',code:'[代码]',paperSummary:'从科学内容生成 Manim 动画的多模态智能体，通过双通道记忆库保留成功案例和经过验证的失败模式，在不更新模型权重的情况下跨任务利用经验。',copy:'复制',copied:'已复制 BibTeX。',copyFallback:'引用已选中，请按 Ctrl+C（或 ⌘C）复制。',interests:'研究兴趣',agents:'<strong>语言模型智能体：</strong>推理、规划与工具使用。',memory:'<strong>记忆与自进化：</strong>跨任务积累成功与失败经验。',multimodal:'<strong>多模态学习：</strong>结合语言、代码与视觉反馈。',paperProject:'将学术论文转化为 Manim 讲解动画，通过场景规划、代码生成及文本和视觉反思改进结果。我参与了该项目的开发。',circuitProject:'基于 C++ 的数字逻辑电路设计与仿真。',stlProject:'从零实现核心 STL 容器、迭代器与算法。',education:'教育背景',university:'东南大学',school:'计算机科学与工程学院'
         }
       };
       const languageButton = document.getElementById('language-toggle');
