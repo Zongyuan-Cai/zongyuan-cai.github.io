@@ -33,11 +33,6 @@ An agent that turns scientific content into Manim animations and retains useful 
 
 [Paper](https://arxiv.org/abs/2606.30296) · [PDF](https://arxiv.org/pdf/2606.30296) · [Project Page](https://manimagent.github.io/) · [Code](https://github.com/jwj1342/Paper2Manim)
 
-## Research Interests · 研究兴趣
-
-- **Multi-agent systems** — communication, coordination, and collaboration.
-- **LLM interpretability** — understanding model reasoning and behavior.
-
 ## Selected Projects · 精选项目
 
 | Project | Focus |
