@@ -2,7 +2,7 @@
 
 # Zongyuan Cai
 
-**Language models · Intelligent agents · Multimodal learning**
+**Multi-agent Systems · LLM Interpretability**
 
 Southeast University · 东南大学<br>
 School of Computer Science and Engineering · 计算机科学与工程学院
@@ -15,9 +15,9 @@ School of Computer Science and Engineering · 计算机科学与工程学院
 
 ## About · 关于我
 
-I explore how language model agents can reason, use tools, and learn from experience. My interests include agent memory, self-evolution, and multimodal systems that turn scientific knowledge into understandable visual explanations.
+My research interests are multi-agent systems and LLM interpretability. I am interested in how agents coordinate and collaborate, and in understanding the reasoning and behavior of large language models.
 
-我关注语言模型智能体如何推理、使用工具，并从经验中学习，尤其对智能体记忆、自进化，以及将科学知识转化为可理解的视觉表达感兴趣。
+我的研究兴趣是多智能体系统与大语言模型可解释性，关注智能体之间的协调与协作，以及如何理解大语言模型的推理过程与行为。
 
 ## Selected Research · 代表性研究
 
@@ -35,9 +35,8 @@ An agent that turns scientific content into Manim animations and retains useful 
 
 ## Research Interests · 研究兴趣
 
-- **Language model agents** — reasoning, planning, and tool use.
-- **Memory and self-evolution** — learning from success and failure across tasks.
-- **Multimodal creation** — connecting language, code, and visual feedback.
+- **Multi-agent systems** — communication, coordination, and collaboration.
+- **LLM interpretability** — understanding model reasoning and behavior.
 
 ## Selected Projects · 精选项目
 
