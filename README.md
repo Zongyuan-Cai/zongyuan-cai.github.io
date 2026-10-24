@@ -7,7 +7,7 @@
 Southeast University · 东南大学<br>
 School of Computer Science and Engineering · 计算机科学与工程学院
 
-[Website](https://zongyuan-cai.github.io/) · [Blog](https://zongyuan-cai.github.io/blog/) · [Research](https://arxiv.org/abs/2606.30296) · [Email](mailto:213252535@seu.edu.cn)
+[Website](https://zongyuan-cai.github.io/) · [Research](https://arxiv.org/abs/2606.30296) · [Email](mailto:213252535@seu.edu.cn)
 
 </div>
 
@@ -49,35 +49,3 @@ An agent that turns scientific content into Manim animations and retains useful 
 ---
 
 For research conversations or collaborations: [213252535@seu.edu.cn](mailto:213252535@seu.edu.cn).
-
-
-## 博客写作
-
-博客地址：https://zongyuan-cai.github.io/blog/
-
-在 `_posts` 文件夹新增 `YYYY-MM-DD-英文短标题.md`，例如 `2026-10-11-first-post.md`：
-
-```markdown
----
-title: "我的第一篇文章"
-description: "文章的简短介绍。"
----
-
-在这里写正文。
-
-<!--more-->
-
-## 小标题
-
-继续写你的想法。
-```
-
-提交到 `main` 后，GitHub Pages 会自动生成文章列表、正文页和订阅源，通常几分钟后可见。文章标题可以用中文，文件名建议使用小写英文和短横线。日期不要晚于当天，未来日期的文章默认不会发布。
-
-草稿可先放在 `_drafts`；这个文件夹不会生成网页，但公开仓库中的草稿源码仍能被查看。未准备公开的内容请保存在本地。
-
-图片可以放在 `assets/images`，在文章里使用 `![图片说明](/assets/images/example.png)`。代码块、列表、引用、表格和 Markdown 链接都可直接使用。
-
-修改博客简介：编辑 `_config.yml` 的 `description`。修改外观：编辑 `assets/css/blog.css`。
-
-GitHub 官方说明：[添加文章](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll)。

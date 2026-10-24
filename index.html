@@ -11,34 +11,37 @@
   <link rel="canonical" href="https://zongyuan-cai.github.io/">
   <title>Zongyuan Cai</title>
   <style>
+    :root { --ink:#293649; --muted:#647184; --accent:#28649d; --accent-dark:#1b456f; --rule:#dde6ee; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:24px; }
-    body { margin:0; background:#fff; color:#222; font:14px/1.9 Arial,Helvetica,"Microsoft YaHei",sans-serif; }
+    body { margin:0; background:#fff; color:var(--ink); font:14px/1.9 Arial,Helvetica,"Microsoft YaHei",sans-serif; }
     [hidden] { display:none !important; }
-    a { color:#1772d0; text-decoration:none; }
-    a:hover { color:#c36a10; text-decoration:underline; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { color:var(--accent-dark); text-decoration:underline; }
     a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid #1772d0; outline-offset:4px; }
     button { font:inherit; }
     .container { max-width:940px; margin:0 auto; padding:0 24px; }
     .skip { position:absolute; top:-80px; left:20px; padding:8px 12px; background:#fff; }
     .skip:focus { top:8px; }
-    .site-header { border-bottom:1px solid #eee; }
+    .site-header { border-bottom:1px solid var(--rule); }
     .header-inner { min-height:72px; display:flex; justify-content:space-between; align-items:center; gap:20px; }
-    .site-name { color:#333; font-size:16px; font-weight:600; }
+    .site-name { color:var(--accent-dark); font-size:16px; font-weight:600; }
     .header-controls,nav { display:flex; align-items:center; gap:22px; }
     nav { flex-wrap:wrap; row-gap:8px; }
-    nav a { color:#555; font-size:13px; }
+    nav a { color:#526d89; font-size:13px; }
     .language { border:0; background:none; padding:0; color:#666; font-size:12px; cursor:pointer; white-space:nowrap; }
     .language:hover { color:#1772d0; }
     main { padding-top:48px; }
-    h1 { font-size:32px; line-height:1.3; font-weight:400; margin:0 0 28px; }
+    h1 { color:var(--accent-dark); font-size:32px; line-height:1.3; font-weight:400; margin:0 0 28px; }
     p { margin:0 0 18px; }
     .intro { max-width:780px; }
+    .intro strong { color:#345e86; font-weight:600; }
     .profile-links { margin-top:24px; }
     .sep { color:#999; margin:0 9px; }
     section { margin-top:46px; }
     .intro { margin-top:0; }
-    h2 { margin:0 0 22px; padding-bottom:10px; border-bottom:1px solid #eee; font-size:22px; line-height:1.4; font-weight:400; }
+    h2 { position:relative; color:#315f88; margin:0 0 22px; padding-bottom:10px; border-bottom:1px solid var(--rule); font-size:22px; line-height:1.4; font-weight:400; }
+    h2::after { content:""; position:absolute; left:0; bottom:-1px; width:32px; height:2px; background:#7b9bb8; }
     ul { padding-left:20px; margin:0; }
     li { margin:10px 0; }
     .news-date { display:inline-block; min-width:80px; color:#555; }
@@ -54,11 +57,11 @@
     .venue { margin-bottom:10px; color:#a33227; font-weight:600; }
     .paper-links { display:flex; flex-wrap:wrap; gap:4px 12px; margin-bottom:14px; }
     .paper-summary { margin:0; color:#444; }
-    .research-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; list-style:none; padding:0; }
-    .research-list li { margin:0; padding:20px 22px; background:#f2f6fb; border-left:3px solid #cbdcf0; border-radius:3px; }
-    .research-list li:nth-child(2) { background:#f3f7f2; border-left-color:#d0dfca; }
-    .research-list h3 { margin:0 0 8px; font-size:14px; line-height:1.6; font-weight:600; }
-    .research-list p { margin:0; color:#555; }
+    .research-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; list-style:none; padding:0; }
+    .research-list li { margin:0; }
+    .research-list li + li { border-left:1px solid var(--rule); padding-left:28px; }
+    .research-list h3 { color:var(--accent); margin:0 0 8px; font-size:14px; line-height:1.6; font-weight:600; }
+    .research-list p { margin:0; color:var(--muted); }
     details { margin-top:16px; }
     summary { cursor:pointer; width:fit-content; color:#1772d0; font-size:13px; }
     .citation-box { position:relative; padding:12px; background:#f7f7f7; margin-top:10px; border:1px solid #eee; }
@@ -71,11 +74,15 @@
     .project-description { margin:6px 0 0; color:#555; }
     .education-name { font-weight:600; margin-bottom:6px; }
     .education-school { color:#555; }
-    footer { margin-top:48px; border-top:1px solid #eee; padding:22px 0 32px; color:#888; font-size:12px; }
+    .contact-line { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 18px; }
+    .contact-label { color:var(--muted); font-size:12px; }
+    .contact-email { display:inline-flex; align-items:center; gap:9px; }
+    .contact-email svg { width:13px; height:13px; flex-shrink:0; }
+    footer { margin-top:48px; border-top:1px solid var(--rule); padding:22px 0 32px; color:var(--muted); font-size:12px; }
     @media(max-width:760px) { .publication { grid-template-columns:200px minmax(0,1fr); gap:24px; } }
     @media(max-width:600px) { .container { padding:0 20px; } .header-inner { min-height:64px; padding-top:14px; padding-bottom:14px; } .site-name { display:none; } .header-controls { width:100%; justify-content:space-between; gap:12px; } nav { gap:17px; } nav a { font-size:12px; } .language { font-size:11px; } main { padding-top:36px; } h1 { font-size:29px; } section { margin-top:38px; } h2 { font-size:21px; margin-bottom:20px; } .publication { grid-template-columns:minmax(0,1fr); gap:24px; } .paper-figure { width:100%; max-width:360px; margin:0 auto; padding:0; } .paper-links { gap:4px 12px; } }
     @media(max-width:360px) { nav { gap:12px; } nav a { font-size:11px; } .sep { margin:0 6px; } }
-    @media(max-width:600px) { .research-list { grid-template-columns:minmax(0,1fr); gap:14px; } .research-list li { padding:18px 20px; } }
+    @media(max-width:600px) { .research-list { grid-template-columns:minmax(0,1fr); gap:20px; } .research-list li + li { padding:20px 0 0; border-left:0; border-top:1px solid var(--rule); } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @media print { .site-header,.skip,.copy { display:none; } .container { max-width:none; padding:0; } main { padding-top:0; } body { font-size:11px; } section { break-inside:avoid; } a { color:#222; } }
   </style>
@@ -86,7 +93,7 @@
     <div class="container header-inner">
       <a class="site-name" href="#about">Zongyuan Cai</a>
       <div class="header-controls">
-        <nav aria-label="Main navigation"><a href="#about" data-i18n="about">About</a><a href="#publications" data-i18n="publications">Publications</a><a href="#projects" data-i18n="projects">Projects</a><a href="/blog/" data-i18n="blog">Blog</a><a href="#contact" data-i18n="contact">Contact</a></nav>
+        <nav aria-label="Main navigation"><a href="#about" data-i18n="about">About</a><a href="#publications" data-i18n="publications">Publications</a><a href="#projects" data-i18n="projects">Projects</a><a href="#contact" data-i18n="contact">Contact</a></nav>
         <button class="language" id="language-toggle" type="button" aria-label="切换至中文" hidden>中文</button>
       </div>
     </div>
@@ -145,7 +152,7 @@
         </ul>
       </section>
       <section id="education" aria-labelledby="education-heading"><h2 id="education-heading" data-i18n="education">Education</h2><p class="education-name" data-i18n="university">Southeast University</p><p class="education-school" data-i18n="school">School of Computer Science and Engineering</p></section>
-      <section id="contact" aria-labelledby="contact-heading"><h2 id="contact-heading" data-i18n="contact">Contact</h2><p><a href="mailto:213252535@seu.edu.cn">213252535@seu.edu.cn</a></p></section>
+      <section id="contact" aria-labelledby="contact-heading"><h2 id="contact-heading" data-i18n="contact">Contact</h2><p class="contact-line"><span class="contact-label" data-i18n="email">Email</span><a class="contact-email" href="mailto:213252535@seu.edu.cn">213252535@seu.edu.cn<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg></a></p></section>
     </main>
     <footer>© 2026 Zongyuan Cai</footer>
   </div>
@@ -153,10 +160,10 @@
     (() => {
       const translations = {
         en: {
-          skip:'Skip to content',about:'About',publications:'Publications',projects:'Projects',blog:'Blog',contact:'Contact',intro:'I am at <strong>Southeast University</strong>, in the School of Computer Science and Engineering. My research interests focus on <strong>multi-agent systems and LLM interpretability</strong>.',researchIntro:'I am interested in how agents communicate, coordinate, and collaborate, and in understanding the reasoning and behavior of large language models. My recent work on ManimAgent explores how agents can learn from experience across tasks.',email:'Email',latestPaper:'Latest paper',news:'News',newsItem:'Our paper <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> has been accepted to <strong>EMNLP 2026 (Poster)</strong>.',venue:'EMNLP 2026 · Poster',frameworkCaption:'Framework overview',projectPage:'[Project page]',code:'[Code]',paperSummary:'A multimodal agent that generates Manim animations from scientific content and learns across tasks through a dual-channel memory bank of successful examples and validated failure patterns, without updating model weights.',copy:'Copy',copied:'BibTeX copied.',copyFallback:'Citation selected. Press Ctrl+C (or ⌘C) to copy.',interests:'Research Interests',multiAgentTitle:'Multi-agent Systems',multiAgentText:'Communication, coordination, and collaboration among agents.',interpretabilityTitle:'LLM Interpretability',interpretabilityText:'Understanding the reasoning and behavior of large language models.',paperProject:'A pipeline for converting research papers into explanatory Manim animations, with scene planning, code generation, and text and visual reflection. Contributor.',circuitProject:'Digital logic circuit design and simulation in C++.',stlProject:'A from-scratch implementation of core STL containers, iterators, and algorithms.',education:'Education',university:'Southeast University',school:'School of Computer Science and Engineering'
+          skip:'Skip to content',about:'About',publications:'Publications',projects:'Projects',contact:'Contact',intro:'I am at <strong>Southeast University</strong>, in the School of Computer Science and Engineering. My research interests focus on <strong>multi-agent systems and LLM interpretability</strong>.',researchIntro:'I am interested in how agents communicate, coordinate, and collaborate, and in understanding the reasoning and behavior of large language models. My recent work on ManimAgent explores how agents can learn from experience across tasks.',email:'Email',latestPaper:'Latest paper',news:'News',newsItem:'Our paper <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> has been accepted to <strong>EMNLP 2026 (Poster)</strong>.',venue:'EMNLP 2026 · Poster',frameworkCaption:'Framework overview',projectPage:'[Project page]',code:'[Code]',paperSummary:'A multimodal agent that generates Manim animations from scientific content and learns across tasks through a dual-channel memory bank of successful examples and validated failure patterns, without updating model weights.',copy:'Copy',copied:'BibTeX copied.',copyFallback:'Citation selected. Press Ctrl+C (or ⌘C) to copy.',interests:'Research Interests',multiAgentTitle:'Multi-agent Systems',multiAgentText:'Communication, coordination, and collaboration among agents.',interpretabilityTitle:'LLM Interpretability',interpretabilityText:'Understanding the reasoning and behavior of large language models.',paperProject:'A pipeline for converting research papers into explanatory Manim animations, with scene planning, code generation, and text and visual reflection. Contributor.',circuitProject:'Digital logic circuit design and simulation in C++.',stlProject:'A from-scratch implementation of core STL containers, iterators, and algorithms.',education:'Education',university:'Southeast University',school:'School of Computer Science and Engineering'
         },
         zh: {
-          skip:'跳转至正文',about:'关于',publications:'论文',projects:'项目',blog:'博客',contact:'联系',intro:'我在<strong>东南大学计算机科学与工程学院</strong>，研究兴趣是<strong>多智能体系统与大语言模型可解释性</strong>。',researchIntro:'我关注智能体之间如何通信、协调与协作，以及如何理解大语言模型的推理过程与行为。近期的 ManimAgent 工作探索了智能体如何跨任务积累和利用经验。',email:'邮箱',latestPaper:'最新论文',news:'近期动态',newsItem:'我们的论文 <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> 已被 <strong>EMNLP 2026 接收（Poster）</strong>。',venue:'EMNLP 2026 · Poster',frameworkCaption:'方法框架总览',projectPage:'[项目主页]',code:'[代码]',paperSummary:'从科学内容生成 Manim 动画的多模态智能体，通过双通道记忆库保留成功案例和经过验证的失败模式，在不更新模型权重的情况下跨任务利用经验。',copy:'复制',copied:'已复制 BibTeX。',copyFallback:'引用已选中，请按 Ctrl+C（或 ⌘C）复制。',interests:'研究兴趣',multiAgentTitle:'多智能体系统',multiAgentText:'智能体之间的通信、协调与协作。',interpretabilityTitle:'大语言模型可解释性',interpretabilityText:'理解大语言模型的推理过程与行为。',paperProject:'将学术论文转化为 Manim 讲解动画，通过场景规划、代码生成及文本和视觉反思改进结果。我参与了该项目的开发。',circuitProject:'基于 C++ 的数字逻辑电路设计与仿真。',stlProject:'从零实现核心 STL 容器、迭代器与算法。',education:'教育背景',university:'东南大学',school:'计算机科学与工程学院'
+          skip:'跳转至正文',about:'关于',publications:'论文',projects:'项目',contact:'联系',intro:'我在<strong>东南大学计算机科学与工程学院</strong>，研究兴趣是<strong>多智能体系统与大语言模型可解释性</strong>。',researchIntro:'我关注智能体之间如何通信、协调与协作，以及如何理解大语言模型的推理过程与行为。近期的 ManimAgent 工作探索了智能体如何跨任务积累和利用经验。',email:'邮箱',latestPaper:'最新论文',news:'近期动态',newsItem:'我们的论文 <a href="https://arxiv.org/abs/2606.30296" target="_blank" rel="noopener noreferrer">ManimAgent</a> 已被 <strong>EMNLP 2026 接收（Poster）</strong>。',venue:'EMNLP 2026 · Poster',frameworkCaption:'方法框架总览',projectPage:'[项目主页]',code:'[代码]',paperSummary:'从科学内容生成 Manim 动画的多模态智能体，通过双通道记忆库保留成功案例和经过验证的失败模式，在不更新模型权重的情况下跨任务利用经验。',copy:'复制',copied:'已复制 BibTeX。',copyFallback:'引用已选中，请按 Ctrl+C（或 ⌘C）复制。',interests:'研究兴趣',multiAgentTitle:'多智能体系统',multiAgentText:'智能体之间的通信、协调与协作。',interpretabilityTitle:'大语言模型可解释性',interpretabilityText:'理解大语言模型的推理过程与行为。',paperProject:'将学术论文转化为 Manim 讲解动画，通过场景规划、代码生成及文本和视觉反思改进结果。我参与了该项目的开发。',circuitProject:'基于 C++ 的数字逻辑电路设计与仿真。',stlProject:'从零实现核心 STL 容器、迭代器与算法。',education:'教育背景',university:'东南大学',school:'计算机科学与工程学院'
         }
       };
       const languageButton = document.getElementById('language-toggle');
